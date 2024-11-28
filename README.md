@@ -1,4 +1,7 @@
 # Сборка и запуск
+```
+docker network create ml_service
+```
 ## CPU версия
 ```
 docker compose -f docker-compose.cpu.yaml up -d --build
