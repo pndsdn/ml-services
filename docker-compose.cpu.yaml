@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  clap:
+    build:
+      context: ./clap
+      dockerfile: Dockerfile.cpu
+    ports:
+      - "28001:80"
+    environment:
+      - PORT=80
+      - HOST=0.0.0.0
+      - DEVICE=cpu
+
+  clip:
+    build:
+      context: ./clip
+      dockerfile: Dockerfile.cpu
+    ports:
+      - "28002:80"
+    environment:
+      - PORT=80
+      - HOST=0.0.0.0
+      - DEVICE=cpu
+
+  embedder:
+    build:
+      context: ./embedder
+      dockerfile: Dockerfile.cpu
+    ports:
+      - "28003:80"
+    environment:
+      - PORT=80
+      - HOST=0.0.0.0
+      - DEVICE=cpu
+
+  ocr:
+    build:
+      context: ./ocr
+      dockerfile: Dockerfile.cpu
+    ports:
+      - "28004:80"
+    environment:
+      - PORT=80
+      - HOST=0.0.0.0
+      - DEVICE=cpu
+
+networks:
+  ml_service:
+    external: true
