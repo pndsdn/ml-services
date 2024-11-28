@@ -11,6 +11,8 @@ services:
       - PORT=80
       - HOST=0.0.0.0
       - DEVICE=cpu
+    networks:
+      - ml_service
 
   clip:
     build:
@@ -22,6 +24,8 @@ services:
       - PORT=80
       - HOST=0.0.0.0
       - DEVICE=cpu
+    networks:
+      - ml_service
 
   embedder:
     build:
@@ -33,6 +37,8 @@ services:
       - PORT=80
       - HOST=0.0.0.0
       - DEVICE=cpu
+    networks:
+      - ml_service
 
   ocr:
     build:
@@ -44,6 +50,8 @@ services:
       - PORT=80
       - HOST=0.0.0.0
       - DEVICE=cpu
+    networks:
+      - ml_service
 
 networks:
   ml_service:
